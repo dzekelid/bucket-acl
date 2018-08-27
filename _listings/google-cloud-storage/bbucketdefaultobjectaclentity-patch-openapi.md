@@ -1,9 +1,12 @@
+---
 swagger: "2.0"
 x-collection-name: Google Cloud Storage
-x-complete: 1
+x-complete: 0
 info:
-  title: Google Cloud Storage
+  title: Google Cloud Storage Update Bucket Default ACL
   version: 1.0.0
+  description: Updates a default object ACL entry on the specified bucket. This method
+    supports patch semantics.
 schemes:
 - http
 produces:
@@ -224,24 +227,17 @@ paths:
           description: OK
       tags:
       - Bucket ACL
-    put:
-      summary: Update Bucket Default ACL
-      description: Updates a default object ACL entry on the specified bucket.
-      operationId: storage.defaultObjectAccessControls.update
-      x-api-path-slug: bbucketdefaultobjectaclentity-put
-      parameters:
-      - in: body
-        name: body
-        schema:
-          $ref: '#/definitions/holder'
-      - in: path
-        name: bucket
-        description: Name of a bucket
-      - in: path
-        name: entity
-        description: The entity holding the permission
-      responses:
-        200:
-          description: OK
-      tags:
-      - Bucket ACL
+x-streamrank:
+  polling_total_time_average: 0
+  polling_size_download_average: 0
+  streaming_total_time_average: 0
+  streaming_size_download_average: 0
+  change_yes: 0
+  change_no: 0
+  time_percentage: 0
+  size_percentage: 0
+  change_percentage: 0
+  last_run: ""
+  days_run: 0
+  minute_run: 0
+---

@@ -1,13 +1,11 @@
 ---
 swagger: "2.0"
-x-collection-name: AWS S3
+x-collection-name: Google Cloud Storage
 x-complete: 0
 info:
-  title: AWS S3 GET Bucket ACL
+  title: Google Cloud Storage Get Bucket ACLs
   version: 1.0.0
-  description: This implementation of the GET operation uses the aclsubresource to
-    return the access control list (ACL) of a bucket
-basePath: /
+  description: Retrieves ACL entries on the specified bucket.
 schemes:
 - http
 produces:
@@ -15,19 +13,21 @@ produces:
 consumes:
 - application/json
 paths:
-  /?acl:
+  /b/{bucket}/acl:
     get:
-      summary: GET Bucket ACL
-      description: This implementation of the GET operation uses the aclsubresource
-        to return the access control list (ACL) of a bucket
-      operationId: get-bucket-acl
-      x-api-path-slug: acl-get
+      summary: Get Bucket ACLs
+      description: Retrieves ACL entries on the specified bucket.
+      operationId: storage.bucketAccessControls.list
+      x-api-path-slug: bbucketacl-get
+      parameters:
+      - in: path
+        name: bucket
+        description: Name of a bucket
       responses:
         200:
           description: OK
       tags:
-      - Bucket
-      - ACL
+      - Bucket ACL
 x-streamrank:
   polling_total_time_average: 0
   polling_size_download_average: 0
